@@ -47,10 +47,10 @@ int main()
                     switch (brd[j][i])
                     {
                     case PieceState::Black:
-                        std::cout << (j == x ? "|XX|" : " XX ");
+                        std::cout << (j == x ? "|■■|" : " ■■ ");
                         break;
                     case PieceState::White:
-                        std::cout << (j == x ? "|OO|" : " OO ");
+                        std::cout << (j == x ? "|□□|" : " □□ ");
                         break;
                     case PieceState::Empty:
                         std::cout << (j == x ? "|  |" : "    ");

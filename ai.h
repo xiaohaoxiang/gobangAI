@@ -8,7 +8,7 @@ namespace AI
 {
 P solve(const ChessBoard &brd);
 
-WeightType DFS(ChessBoard &brd, uint64_t hashv, WeightedPointTable &tab, WeightType A, WeightType B, int depth,
+WeightType DFS(ChessBoard &brd, WeightType A, WeightType B, int depth,
                PieceState clr);
 
 std::vector<WeightedPoint> getNext(const ChessBoard &brd, const TwoWeightedMat &dwmat);
@@ -17,8 +17,6 @@ std::vector<WeightedPoint> getNext(const ChessBoard &brd, const TwoWeightedMat &
 WeightType assessBoard(const ChessBoard &brd, TwoWeightedMat &dwmat);
 
 WeightType assessBoard(const ChessBoard &brd, WeightedMat &wmat, const PieceState clr, P S, P dir);
-
-uint64_t boardHasher(const ChessBoard &brd);
 
 } // namespace AI
 

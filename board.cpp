@@ -3,7 +3,7 @@
 
 const P dv[8] = {{1, 0}, {1, 1}, {0, 1}, {1, -1}, -dv[0], -dv[1], -dv[2], -dv[3]};
 
-ChessBoard::ChessBoard() : _stat(BoardState::TurnOfBlack)
+ChessBoard::ChessBoard() : _stat(BoardState::Empty)
 {
     for (auto &v : _brd)
     {
@@ -73,7 +73,7 @@ BoardState ChessBoard::put(int x, int y) noexcept
 
 BoardState ChessBoard::put(P p) noexcept
 {
-    PieceState clr = _stat == BoardState::TurnOfBlack ? PieceState::Black : PieceState::White;
+    PieceState clr = (_stat == BoardState::TurnOfBlack) || (_stat == BoardState::Empty) ? PieceState::Black : PieceState::White;
     int maxCnt = 0;
     _brd[p.x][p.y] = clr;
     for (int i = 0; i < 4; i++)

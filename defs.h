@@ -5,7 +5,6 @@
 #include <array>
 #include <cstddef>
 #include <cstdint>
-#include <unordered_map>
 #include <utility>
 
 using P = Point<int>;
@@ -30,7 +29,7 @@ enum RowType : int
     None
 };
 
-enum PieceState : int
+enum PieceState : char
 {
     White = -1,
     Empty = 0,
@@ -43,17 +42,17 @@ enum class BoardState : int
     TurnOfWhite,
     WinBlack,
     WinWhite,
+    Empty,
     Error
 };
 
 using BoardVec = std::array<PieceState, BoardSize>;
 using BoardMat = std::array<BoardVec, BoardSize>;
 
-using WeightType = double;
+using WeightType = float;
 using WeightedMat = std::array<std::array<WeightType, BoardSize>, BoardSize>;
 using RowTypeMatVec = std::array<WeightedMat, 4>;
 using WeightedPoint = std::pair<P, WeightType>;
-using WeightedPointTable = std::unordered_map<uint64_t, WeightType>;
 
 // 0->Black    1->White
 using TwoWeightedMat = std::array<WeightedMat, 2>;
