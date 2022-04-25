@@ -17,8 +17,6 @@ namespace AI
                                          100, 10000, 10, 100, 100, 1000, 100, 10000, 10000, 10000000};
     const WeightType INF = 1e20;
 
-    const int MaxTableSize = 100000000;
-
     TwoWeightedMat WMat;
 
     P solve(const ChessBoard &board)
